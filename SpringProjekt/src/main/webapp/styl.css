@@ -1,0 +1,23 @@
+body {
+	background-color: #FFFFCC;
+}
+
+h1 {
+	color: blue;
+}
+
+form.kalkulator {
+	background-color: #FFFFFF;
+	border: 3px solid green;
+	margin: 20px;
+	padding: 10px;
+}
+
+.error {
+	color: red;
+}
+
+.wynik {
+	color: green;
+	font-weight: bold;
+}
