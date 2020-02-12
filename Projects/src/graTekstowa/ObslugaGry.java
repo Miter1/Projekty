@@ -2,7 +2,6 @@ package graTekstowa;
 
 import java.util.Scanner;
 //TODO
-//Gra nie wie gdzie jest obiekt jak jest na łódce
 //Później porobić mniejsze funkcje
 //oraz zrobić wszystko debilo-odporne
 public class ObslugaGry {
@@ -85,10 +84,6 @@ public class ObslugaGry {
 				System.out.println("DZIĘKUJĘ ZA GRĘ.");
 				System.exit(0);
 			}
-//			System.out.println(Obiekty.WILK.polozenieObiektu);
-//			System.out.println(Obiekty.KOZA.polozenieObiektu);
-//			System.out.println(Obiekty.KAPUSTA.polozenieObiektu);
-//			System.out.println(lodka.getPolozenieLodki());
 			odp = sc.nextInt();
 			opcje(odp, sc, lodka);
 		}
