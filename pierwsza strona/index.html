@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Strona Interntowa</title>
+    <link rel="stylesheet" type="text/css" href="styl.css"/>
+</head>
+<body onload="czas()">
+    
+    <div id="container">
+        <div id="naglowek">
+            <h1>Ciekawostki</h1>
+        </div>
+        <div id="Przedstawienie-sie">
+            <h3>Witaj na mojej stronie! Ja jestem Michał, a to jest kilka ciekawostek:</h3>
+        </div>
+        <div id="Ciekawostki">
+            <div id="c1">
+                <h4>Ciekawostka 1:</h4>
+                <p>Najdłuższą nazwą miasta w Europie jest 
+                    Llanfair-pwllgwyngyll-gochgery-chwyrn-drobwll-
+                    llan-llan-tysilio-gogogo-goch, który znajduje się w Walii.</p>
+            </div>
+            <div id="c2">
+                <h4>Ciekawostka 2:</h4>
+                <p>Kanada ma więcej jezior niż reszta świata łącznie.
+                    W Kanadzie znajdują się 3 miliony jezior,
+                    jeśli uwzględni się również mniejsze jeziora.</p>
+            </div>
+            <div id="c3">
+                <h4>Ciekawostka 3:</h4>
+                Las deszczowy Amazonki jest najbardziej 
+                zróżnicowanym biologicznie miejscem na świecie.
+                <p><a href="https://www.google.pl/">Źródła</a></p>
+            </div>
+        </div>
+        <div id="Guzik-i-link">
+            <script src="skrypt.js"></script>
+            <input type="button", value="Wciśnij guzik:" >
+        </div>
+        <div id="godzina">
+            <script>
+                function czas(){
+                    let dzisiaj = new Date();
+                    let godzina = dzisiaj.getHours();
+                    if (godzina<10) godzina = '0' + godzina;
+                    let minuta = dzisiaj.getMinutes();
+                    if(minuta <10) minuta = '0' + minuta;
+                    let sekunda = dzisiaj.getSeconds();
+                    if(sekunda <10) sekunda = '0' + sekunda;
+                    document.getElementById('godzina').innerHTML = "Obecna godzina to: " + 
+                    godzina + ":" + minuta + ":" + sekunda;
+                    setTimeout("czas()",1000);
+                }
+            </script>
+        </div>
+        <div id="Dolna-czesc">
+            Copyright &copy; 2020 Michał Słomczewski.
+            
+        </div>
+    </div>
+    
+  
+</body>
+</html>

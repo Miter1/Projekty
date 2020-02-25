@@ -1,0 +1,49 @@
+body{
+    background-color: #EEE;
+    font-family: Helvetica, Arial, sans-serif;
+}
+#container{
+    background-color: white;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#naglowek{
+    background-color: rgb(32, 95, 178);
+    color: white;
+    text-align: center;
+}
+#Przedstawienie-sie{
+    text-align: center;
+}
+
+#c1{
+    width: 250px;
+    float: left;
+    padding: 8px;
+}
+#c2{
+    width: 250px;
+    float: left;
+    padding: 8px;
+}
+#c3{
+    width: 250px;
+    float: left;
+    padding: 8px;
+}
+
+#Dolna-czesc{
+    padding: 10px;
+    background-color: grey;
+    clear: both;
+    color: white;
+    text-align: right;
+}
+a{
+    text-decoration: none;
+    color:red;
+    font-weight: bold;
+}
