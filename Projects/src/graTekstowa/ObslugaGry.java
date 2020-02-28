@@ -1,9 +1,6 @@
 package graTekstowa;
 
 import java.util.Scanner;
-//TODO
-//Później porobić mniejsze funkcje
-//oraz zrobić wszystko debilo-odporne
 public class ObslugaGry {
 	
 	public static void main(String[] args) {
@@ -11,7 +8,7 @@ public class ObslugaGry {
 		System.out.println("WITAMY W GRZE. WYBIERZ ODPOWIEDNI NUMER I WCIŚNIJ ENTER.");
 		menu();
 		Scanner sc = new Scanner(System.in);
-		int odp = sc.nextInt();
+		int odp = wKoncuZadziala(sc, 1, 6);
 		opcje(odp, sc, lodka);
 	}
 	
@@ -24,6 +21,8 @@ public class ObslugaGry {
 		System.out.println("5: POKAŻ MENU");
 		System.out.println("6: WYJDŹ Z GRY");
 		System.out.println("__________________________________");
+		System.out.println();
+		
 	}
 	
 	static void opcje(int odp, Scanner sc, Lodka lodka) {
@@ -47,9 +46,12 @@ public class ObslugaGry {
 					if(o.nazwaObiektu.equals(obiekt) && o.polozenieObiektu==lodka.getPolozenieLodki()) {
 						o.polozenieObiektu = 0;
 						lodka.setCzyJestPusta(false);
-						System.out.println("Obiekt został wrzucony na łódkę.");
 					}
 				}
+				if(lodka.getCzyJestPusta()==true)
+					System.out.println("Takiego obiektu nie ma w tej grze!");
+				else
+					System.out.println("Obiekt został wrzucony na łódkę.");
 				break;
 			case 3:
 				if(lodka.getCzyJestPusta()==true) {
@@ -78,12 +80,16 @@ public class ObslugaGry {
 				break;
 			case 5:
 				menu();
-				odp = sc.nextInt();
 				break;
 			case 6:
 				System.out.println("DZIĘKUJĘ ZA GRĘ.");
 				System.exit(0);
 			}
+//			System.out.println(Obiekty.WILK.polozenieObiektu);
+//			System.out.println(Obiekty.KOZA.polozenieObiektu);
+//			System.out.println(Obiekty.KAPUSTA.polozenieObiektu);
+//			System.out.println(lodka.getPolozenieLodki());
+			odp = wKoncuZadziala(sc, 1, 6);
 			odp = sc.nextInt();
 			opcje(odp, sc, lodka);
 		}
@@ -131,11 +137,31 @@ public class ObslugaGry {
 	static void menuPoKoncuGry(Lodka lodka) {
 		
 		Scanner sc = new Scanner(System.in);
-		int odp = sc.nextInt();
+		int odp = wKoncuZadziala(sc, 0, 1);
 		if(odp == 0) System.exit(0);
 		else {
 			menu();
 			resetElementow(lodka);
 		}
+	}
+	static int wKoncuZadziala (Scanner sc, int dolnaGranica, int gornaGranica) {
+		int odp = 0;
+		boolean bool = true;
+		do {
+			if(sc.hasNextInt()) {
+				odp = sc.nextInt();
+				if(odp>gornaGranica || odp<dolnaGranica) {
+					System.out.println("PODANO LICZBĘ Z NIEWŁAŚCIWEGO ZAKRESU. SPRÓBUJ PONOWNIE:");
+				}
+				else {
+					bool = false;
+				}
+			}
+			else {
+				System.out.println("PODANO NIEWŁAŚCIWE DANE. PODAJ CYFRĘ:");
+				sc.next();
+			}
+		}while(bool);
+		return odp;
 	}
 }
